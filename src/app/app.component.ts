@@ -1,4 +1,10 @@
+import { Heroe } from './heroes/interfaces/heroes.interface';
 import { Component } from '@angular/core';
+
+// import * as heroes from "./../assets/json/db.json";
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +13,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'heroesApp';
+
 }

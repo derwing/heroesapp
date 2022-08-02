@@ -1,0 +1,40 @@
+<mat-grid-list cols="1" *ngIf="!heroe; else divHeroe">
+    <mat-grid-tile>
+        <mat-spinner>
+
+        </mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divHeroe>
+    <div fxLayout="row" fxLayout.xl="row" fxLayoutGap="30px">
+        <div fxFlex="50%">
+            <h1>{{ heroe.superhero}} <small>{{ heroe.alter_ego}}</small></h1>
+        </div>
+        <mat-divider></mat-divider>
+        <br>
+        <div class="container-heroes">
+            <div class="transitions" tabindex="0">
+                <div class="transition1-dc" *ngIf="isDC" [ngStyle]="{'background-image': 'url(' + [heroe | img] + ')'}"></div>
+                <div class="transition2-dc" *ngIf="isDC"></div>
+                <div class="transition1-marvel" *ngIf="!isDC" [ngStyle]="{'background-image': 'url(' + [heroe | img] + ')'}"></div>
+                <div class="transition2-marvel" *ngIf="!isDC"></div>
+            </div>
+
+
+        </div>
+        <!-- <img [src]="heroe | img" alt="heroe.superhero"> -->
+        <div fxFlex="50%">
+            <h1>{{heroe.publisher}}</h1>
+            <mat-divider></mat-divider>
+            <mat-list>
+                <mat-list-item>{{heroe.first_appearance}}</mat-list-item>
+                <mat-list-item>{{heroe.characters}}</mat-list-item>
+                <mat-list-item>{{heroe.publisher}}</mat-list-item>
+                <mat-list-item>{{heroe.alter_ego}}</mat-list-item>
+            </mat-list>
+            <br>
+            <button mat-button color="warn" (click)="back()">Back</button>
+        </div>
+    </div>
+</ng-template>
