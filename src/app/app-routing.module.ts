@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/guards/auth.guard';
 import { AnimationsComponent } from './animations/animations.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'heroes',
-    loadChildren: () => import('./heroes/heroes.module').then(m => m.HeroesModule)
+    loadChildren: () => import('./heroes/heroes.module').then(m => m.HeroesModule),
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard]
   },
   {
     path: 'animation',
