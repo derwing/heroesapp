@@ -1,4 +1,3 @@
-import { AnimationsComponent } from '../animations/animations.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

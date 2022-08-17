@@ -1,4 +1,3 @@
-import { AnimationsComponent } from './animations/animations.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,8 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorPageComponent,
-    AnimationsComponent
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
